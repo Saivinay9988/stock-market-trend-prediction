@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template
 from textblob import TextBlob
 
@@ -20,7 +21,6 @@ def home():
         prediction = predict_trend(news)
     return render_template("index.html", prediction=prediction)
 
-import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
